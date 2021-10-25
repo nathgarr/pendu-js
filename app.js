@@ -66,11 +66,14 @@ function sendWord(inputValue){
 }
 
 function wordSecret(){
-    for(i =0; i <= motrandom.length; i++ ){
-        motrandom.substring(0)
-        tabjeux.push(motrandom)
+    for(i =0; i < motrandom.length; i++ ){
+        let message=motrandom.substring(i,i+1)
+        tabjeux.push(message)
         let divsama = document.getElementById('mystere')
-        divsama.innerHTML ="<div></div>"
+        let divsame = document.createElement('div')
+        divsame.className="letter"
+        divsama.appendChild(divsame)
+        divsame.innerHTML = message
     }
 }
 
