@@ -51,11 +51,13 @@ function checkletter(letter){
     if(motrandom.includes(letter)){
         console.log('je suis la');
         sendWord(inputValue);
+        goodletter(inputValue);
     }
 
     else{
         console.log('je suis pas la')
         sendWord(inputValue);
+        sadletter();
     }
 }
 
@@ -63,6 +65,24 @@ function sendWord(inputValue){
     tabWord.push(inputValue);
     console.log(tabWord);
     lettre.innerHTML += " "+inputValue;
+}
+
+function goodletter(inputValue){
+    if(motrandom.includes(inputValue)){
+        aparait(inputValue);
+    }
+    else{
+        sadletter();
+    }
+}
+
+function aparait(inputValue){
+    let divsame = document.getElementsByClassName('letter');
+    for(i=0; i < motrandom.length; i++){
+        if(motrandom[i]==inputValue){
+            divsame[i].style.visibility = 'visible'
+        }
+    }
 }
 
 function wordSecret(){

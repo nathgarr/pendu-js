@@ -11,11 +11,24 @@ button{
 #mystere{
     display: flex;
 }
+#lettre{
+    border: 1px ridge black;
+    font-size: 19px;
+    width: 30%;
+    height: 19px;
+}
 .letter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
     margin-left: 25px;
-    width: 20px;
+    visibility: hidden;
 }
 .letter::after{
-    border-bottom: 20px;
-    border: 3px ridge black;
+    content: "";
+    width: 20px;
+    border: 2px ridge black;
+    visibility: visible;
 }
