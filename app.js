@@ -6,12 +6,11 @@ const lettre = document.getElementById('lettre')
 
 var motrandom = 'karma'
 
-var tabimg=[
-    []
-]
 var tabjeux = []
 
 var tabWord=[]
+
+var score = 0;
 
 var tabwin=[
     []
@@ -57,7 +56,8 @@ function checkletter(letter){
     else{
         console.log('je suis pas la')
         sendWord(inputValue);
-        sadletter();
+        score++
+        sadletter(score);
     }
 }
 
@@ -71,8 +71,17 @@ function goodletter(inputValue){
     if(motrandom.includes(inputValue)){
         aparait(inputValue);
     }
-    else{
-        sadletter();
+}
+
+function sadletter (score){
+    let img = document.getElementById('picture')
+    let defaite = document.getElementById('pendu')
+    if (score < 7){
+         img.src = './Imgpendu/pendu-'+score+'.png'   
+    }
+    else if(score=7){
+        defaite.innerHTML = "<h2>Vous avez perdu gg 😥</h2> <img src='./Imgpendu/pendu-7.png' alt=''>"
+        img.src = './Imgpendu/pendu-7.png'
     }
 }
 

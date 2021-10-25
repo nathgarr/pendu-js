@@ -32,3 +32,8 @@ button{
     border: 2px ridge black;
     visibility: visible;
 }
+#pendu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
