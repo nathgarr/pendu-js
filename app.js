@@ -12,10 +12,6 @@ var tabWord=[]
 
 var score = 0;
 
-var tabwin=[
-    []
-]
-
 function play(){
     setup();
     wordSecret();
@@ -80,7 +76,7 @@ function sadletter (score){
          img.src = './Imgpendu/pendu-'+score+'.png'   
     }
     else if(score=7){
-        defaite.innerHTML = "<h2>Vous avez perdu gg 😥</h2> <img src='./Imgpendu/pendu-7.png' alt=''>"
+        defaite.innerHTML = "<h2>Vous avez perdu gg 😥</h2> <img src='./Imgpendu/pendu-7.png' alt=''> <button id='btn' OnClick='javascript:window.location.reload()'>Rejouer</button>"
         img.src = './Imgpendu/pendu-7.png'
     }
 }
@@ -106,13 +102,11 @@ function wordSecret(){
     }
 }
 
-function veryfwin(){
+// function veryfwin(){
 
-    if(tabwin == motrandom){
-        alert('bravo vous avez survecu au pendu')
-    }
-
-    else{
-        return
-    }
-}
+//     if(tabjeux == divsame){
+//         let defaite = document.getElementById('pendu')
+//         defaite.innerHTML = "<h2> Tu a gagner bravo 👋🌋😉<h2>"
+//         alert('bravo vous avez survecu au pendu')
+//     }
+// }
