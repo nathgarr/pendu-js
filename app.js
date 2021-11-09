@@ -47,13 +47,14 @@ function checkletter(letter){
         console.log('je suis la');
         sendWord(inputValue);
         goodletter(inputValue);
+        veryfwin();
     }
 
     else{
         console.log('je suis pas la')
         sendWord(inputValue);
         score++
-        sadletter(score);
+        sadletter(score);   
     }
 }
 
@@ -95,18 +96,18 @@ function wordSecret(){
         let message=motrandom.substring(i,i+1)
         tabjeux.push(message)
         let divsama = document.getElementById('mystere')
-        let divsame = document.createElement('div')
-        divsame.className="letter"
-        divsama.appendChild(divsame)
-        divsame.innerHTML = message
+        let divsame = document.createElement('div');
+        divsame.className="letter";
+        divsama.appendChild(divsame);
+        divsame.innerHTML = message;
     }
 }
 
-// function veryfwin(){
+function veryfwin(){
 
-//     if(tabjeux == divsame){
-//         let defaite = document.getElementById('pendu')
-//         defaite.innerHTML = "<h2> Tu a gagner bravo 👋🌋😉<h2>"
-//         alert('bravo vous avez survecu au pendu')
-//     }
-// }
+    if(tabjeux.includes('k','a','r','m')){
+        let defaite = document.getElementById('pendu');
+        defaite.innerHTML = "<h2> Tu a gagner bravo 👋🌋😉<h2>";
+    }
+    
+}
