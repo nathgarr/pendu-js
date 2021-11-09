@@ -12,6 +12,8 @@ var tabWord=[]
 
 var score = 0;
 
+var tableau=[]
+
 function play(){
     setup();
     wordSecret();
@@ -47,7 +49,6 @@ function checkletter(letter){
         console.log('je suis la');
         sendWord(inputValue);
         goodletter(inputValue);
-        veryfwin();
     }
 
     else{
@@ -86,7 +87,9 @@ function aparait(inputValue){
     let divsame = document.getElementsByClassName('letter');
     for(i=0; i < motrandom.length; i++){
         if(motrandom[i]==inputValue){
-            divsame[i].style.visibility = 'visible'
+            divsame[i].style.visibility = 'visible';
+             tableau[i]=inputValue;
+            veryfwin(tableau)
         }
     }
 }
@@ -103,11 +106,15 @@ function wordSecret(){
     }
 }
 
-function veryfwin(){
+function veryfwin(tableau){
+    let mots = tableau.toString();
+    console.log(mots)
+    let motsdeux = mots.replace(/,/g,"");
+    console.log(motsdeux)
 
-    if(tabjeux.includes('k','a','r','m')){
-        let defaite = document.getElementById('pendu');
-        defaite.innerHTML = "<h2> Tu a gagner bravo 👋🌋😉<h2>";
+    if(motsdeux==motrandom){
+        let victoire = document.getElementById('pendu');
+        victoire.innerHTML = "<h2> Tu a gagner bravo 👋🌋😉<h2>";
     }
     
 }
